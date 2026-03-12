@@ -1,0 +1,27 @@
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+
+    background: url("../assets/woman-fullsize.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 100%;
+}
+
+ul,
+li {
+    list-style: none;
+    overflow: hidden;
+}
+
+:root {
+    --speed-base: 0.4s;
+    --speed-fast: 0.2s;
+}
