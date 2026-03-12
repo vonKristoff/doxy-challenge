@@ -1,42 +1,41 @@
-import type { JSX } from "react";
-import { Video, Mic, PhoneIcon, Menu, Plus } from "lucide-react";
+import type { JSX, ReactNode } from "react";
+import { Plus } from "lucide-react";
 
-export const CallControlBar = (): JSX.Element => {
+export interface CallControl {
+  id: string;
+  label: string;
+  icons: [active: ReactNode, inactive: ReactNode];
+  active: boolean;
+  onClick: () => void;
+}
+
+interface CallControlBarProps {
+  controls: CallControl[];
+}
+
+export const CallControlBar = ({
+  controls,
+}: CallControlBarProps): JSX.Element => {
   return (
     <div data-controls>
-      <nav>
-        <div data-controls-icon>
+      <nav aria-label="Call controls">
+        <div data-controls-icon aria-hidden="true">
           <Plus />
         </div>
-        <ul>
-          <li>
-            <button data-bounce="padding">
-              <span>
-                <PhoneIcon />
-              </span>
-            </button>
-          </li>
-          <li>
-            <button data-bounce="padding">
-              <span>
-                <Video />
-              </span>
-            </button>
-          </li>
-          <li>
-            <button data-bounce="padding">
-              <span>
-                <Mic />
-              </span>
-            </button>
-          </li>
-          <li>
-            <button data-bounce="padding">
-              <span>
-                <Menu />
-              </span>
-            </button>
-          </li>
+        <ul role="list">
+          {controls.map(({ id, label, icons, active, onClick }) => (
+            <li key={id}>
+              <button
+                type="button"
+                data-bounce="padding"
+                aria-label={label}
+                aria-pressed={active}
+                onClick={onClick}
+              >
+                <span aria-hidden="true">{active ? icons[0] : icons[1]}</span>
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

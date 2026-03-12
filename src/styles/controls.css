@@ -7,7 +7,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 30vh;
+    height: 40vh;
     width: 100vw;
     z-index: 100;
 }
@@ -58,6 +58,9 @@
         justify-content: center;
     }
 }
+[data-controls] button[aria-pressed="true"] {
+    background-color: red;
+}
 [data-controls]:has(button:focus-within),
 [data-controls]:hover {
     nav {
@@ -65,7 +68,7 @@
         background-color: rgba(0, 0, 0, 0.3);
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, 0em) scale(1);
     }
     li {
         transition: all var(--speed-base) var(--speed-fast) ease-in;
@@ -84,6 +87,7 @@
 }
 
 [data-controls] li:hover > [data-bounce="padding"] {
+    background-color: greenyellow;
     animation: paddingBounce var(--speed-fast) ease;
 }
 
