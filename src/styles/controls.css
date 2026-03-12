@@ -1,3 +1,8 @@
+:root {
+    --speed-base: 0.4s;
+    --speed-fast: 0.2s;
+}
+
 [data-controls] {
     position: fixed;
     bottom: 0;
@@ -27,12 +32,13 @@
     justify-content: center;
 }
 [data-controls] li {
-    transition: all var(--speed-std) ease-out;
+    transition: all var(--speed-base) ease-out;
     list-style: none;
     width: 0em;
     overflow: clip;
     display: flex;
     justify-content: center;
+    padding: 0.125em 0;
 }
 [data-controls] button {
     opacity: 0;
@@ -45,27 +51,52 @@
         padding 0.1s ease,
         all var(--speed-fast) ease-out;
     transform: translate(0%, -100%) scale(0.15);
+    border: none;
     span {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
+[data-controls]:has(button:focus-within),
 [data-controls]:hover {
     nav {
-        background-color: darkslategray;
+        backdrop-filter: blur(0.5em);
+        background-color: rgba(0, 0, 0, 0.3);
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
     li {
-        transition: all var(--speed-std) var(--speed-fast) ease-in;
+        transition: all var(--speed-base) var(--speed-fast) ease-in;
         width: 4em;
         transform: translate(0, 0%);
     }
     button {
         transform: translate(0%, 0%) scale(1);
         opacity: 1;
-        transition: all var(--speed-std) var(--speed-std) ease-in;
+        transition: all var(--speed-base) var(--speed-base) ease-in;
     }
+    [data-controls-icon] {
+        position-anchor: none;
+        visibility: hidden;
+    }
+}
+
+[data-controls] li:hover > [data-bounce="padding"] {
+    animation: paddingBounce var(--speed-fast) ease;
+}
+
+[data-controls-icon] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(0.5);
+    border: 0.125em solid black;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

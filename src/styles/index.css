@@ -1,6 +1,10 @@
+@import "./keyframes.css";
+@import "./controls.css";
+
 html,
 body {
     height: 100vh;
+    font-size: 18px;
 }
 
 body {
@@ -15,13 +19,14 @@ body {
     background-size: auto 100%;
 }
 
+button {
+    font-size: inherit;
+}
+
 ul,
 li {
     list-style: none;
     overflow: hidden;
-}
-
-:root {
-    --speed-base: 0.4s;
-    --speed-fast: 0.2s;
+    margin: 0;
+    padding: 0;
 }

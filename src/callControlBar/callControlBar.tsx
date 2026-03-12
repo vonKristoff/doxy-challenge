@@ -1,22 +1,43 @@
 import type { JSX } from "react";
-import { Video, Mic, PhoneIcon, Menu } from "lucide-react";
+import { Video, Mic, PhoneIcon, Menu, Plus } from "lucide-react";
 
 export const CallControlBar = (): JSX.Element => {
   return (
-    <div data-hover-layout>
+    <div data-controls>
       <nav>
-        <button type="button">
-          <PhoneIcon />
-        </button>
-        <button type="button">
-          <Video />
-        </button>
-        <button type="button">
-          <Mic />
-        </button>
-        <button type="button">
-          <Menu />
-        </button>
+        <div data-controls-icon>
+          <Plus />
+        </div>
+        <ul>
+          <li>
+            <button data-bounce="padding">
+              <span>
+                <PhoneIcon />
+              </span>
+            </button>
+          </li>
+          <li>
+            <button data-bounce="padding">
+              <span>
+                <Video />
+              </span>
+            </button>
+          </li>
+          <li>
+            <button data-bounce="padding">
+              <span>
+                <Mic />
+              </span>
+            </button>
+          </li>
+          <li>
+            <button data-bounce="padding">
+              <span>
+                <Menu />
+              </span>
+            </button>
+          </li>
+        </ul>
       </nav>
     </div>
   );
