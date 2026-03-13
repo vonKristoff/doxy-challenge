@@ -19,6 +19,7 @@ export const CallControlBar = ({
   controls,
 }: CallControlBarProps): JSX.Element => {
   const ref = useRef<HTMLDivElement>(null);
+  const nav = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -41,13 +42,22 @@ export const CallControlBar = ({
 
   return (
     <div ref={ref} data-controls>
-      <nav aria-label="Call controls">
+      <nav
+        ref={nav}
+        aria-label="Call controls"
+        onMouseEnter={() =>
+          nav.current?.style.setProperty("overflow", "visible")
+        }
+        onMouseLeave={() =>
+          nav.current?.style.setProperty("overflow", "hidden")
+        }
+      >
         <div data-controls-icon aria-hidden="true">
           <Plus color="white" />
         </div>
         <ul role="list">
           {controls.map(({ id, label, icons, active, onClick }) => (
-            <li key={id}>
+            <li key={id} data-tooltip={label}>
               <button
                 data-action={id}
                 type="button"

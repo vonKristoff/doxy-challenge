@@ -29,7 +29,7 @@ button {
 ul,
 li {
     list-style: none;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0;
     padding: 0;
 }
