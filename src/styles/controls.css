@@ -4,7 +4,7 @@
     left: 0;
     height: 40vh;
     width: 100vw;
-    z-index: 100;
+    z-index: 10;
 }
 [data-controls] nav {
     display: flex;
@@ -20,7 +20,7 @@
     min-height: 4em;
     transition: all var(--speed-fast);
     box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.125);
-    border: 0.0125em solid var(--dark);
+    border: 0.0125em solid var(--alpha-dark);
 }
 [data-controls] ul {
     display: flex;
@@ -112,6 +112,6 @@
     }
     &[data-action="video"],
     &[data-action="mic"] {
-        background-color: var(--dark);
+        background-color: var(--alpha-dark);
     }
 }

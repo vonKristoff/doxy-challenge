@@ -11,12 +11,15 @@ import {
 } from "lucide-react";
 import { CallControlBar } from "./callControlBar";
 import type { CallControl } from "./callControlBar";
+import { Dialog } from "./dialog";
+import { Settings } from "./settings";
 import "./styles/index.css";
 
 export const Shell = (): JSX.Element => {
   const [videoActive, setVideoActive] = useState(false);
   const [micActive, setMicActive] = useState(false);
   const [callActive, setCallActive] = useState(false);
+  const [menuActive, setMenuActive] = useState(true);
 
   const controls: CallControl[] = [
     {
@@ -42,15 +45,18 @@ export const Shell = (): JSX.Element => {
     },
     {
       id: "menu",
-      label: "More options",
+      label: menuActive ? "Close menu" : "More options",
       icons: [<Menu />, <Menu />],
-      active: false,
-      onClick: () => {},
+      active: menuActive,
+      onClick: () => setMenuActive((prev) => !prev),
     },
   ];
 
   return (
     <>
+      <Dialog open={menuActive} onClose={() => setMenuActive(false)}>
+        <Settings controls={controls} />
+      </Dialog>
       <CallControlBar controls={controls} />
     </>
   );

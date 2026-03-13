@@ -7,6 +7,6 @@
     --black: #000;
     --green: greenyellow;
     --red: #e93939;
-    --pop: darkpink;
-    --dark: rgba(0, 0, 0, 0.4);
+    --pop: hotpink;
+    --alpha-dark: rgba(0, 0, 0, 0.4);
 }
