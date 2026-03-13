@@ -39,13 +39,17 @@ dialog header {
     align-items: center;
     justify-content: space-between;
     gap: 0.5em;
+    p {
+        margin: 0;
+    }
+    margin-bottom: 1em;
 }
 
 dialog button {
     cursor: pointer;
     background-color: var(--alpha-dark);
     border: none;
-    border-radius: 50%;
+    border-radius: 1em;
     padding: 0.5em;
     width: 2em;
     height: 2em;

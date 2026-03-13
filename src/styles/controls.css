@@ -19,7 +19,9 @@
     transform-origin: center;
     min-width: 4em;
     min-height: 4em;
+    /*border-radius var(--speed-base) var(--speed-slow) ease-out,*/
     transition:
+        border-radius var(--speed-fast) 0 ease-out,
         top var(--speed-fast),
         left var(--speed-fast),
         transform var(--speed-fast);
@@ -30,6 +32,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5em;
+    padding: 0 0.5em;
 }
 [data-controls] li {
     transition: all var(--speed-base) ease-out;
@@ -66,20 +70,28 @@
         background-color: rgba(0, 0, 0, 0.3);
         left: 50%;
         top: 50%;
+        border-radius: 1rem;
         transform: translate(-50%, 0em) scale(1);
+        transition:
+            border-radius var(--speed-base) var(--speed-slow) ease-in,
+            top var(--speed-fast),
+            left var(--speed-fast),
+            transform var(--speed-fast);
     }
     li {
         transition:
             transform var(--speed-base) var(--speed-fast) ease-in,
             opacity var(--speed-base) var(--speed-fast) ease-in,
             width var(--speed-base) var(--speed-fast) ease-in;
-        width: 4em;
+        width: 3em;
         transform: translate(0, 0%);
     }
     button {
         transform: translate(0%, 0%) scale(1);
         opacity: 1;
+        border-radius: 1em;
         transition:
+            border-radius var(--speed-base) var(--speed-slow) ease-in,
             transform var(--speed-base) var(--speed-base) ease-in,
             opacity var(--speed-base) var(--speed-base) ease-in,
             background-color var(--speed-fast) ease-in;

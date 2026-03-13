@@ -1,19 +1,19 @@
 [data-bounce="padding"] {
-    padding: 1em;
+    padding: calc(1em / 3 * 2);
 }
 
 @keyframes paddingBounce {
     0%,
     100% {
-        padding: 1em;
+        padding: calc(1em / 3 * 2);
     }
     25% {
-        padding: 1.2em;
+        padding: calc(1.2em / 3 * 2);
     }
     50% {
-        padding: 1em;
+        padding: calc(1em / 3 * 2);
     }
     75% {
-        padding: 1.1em;
+        padding: calc(1.1em / 3 * 2);
     }
 }

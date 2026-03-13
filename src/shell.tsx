@@ -24,14 +24,14 @@ export const Shell = (): JSX.Element => {
   const controls: CallControl[] = [
     {
       id: "call",
-      label: "Leave call",
+      label: callActive ? "Leave call" : "Start call",
       icons: [<PhoneOff color="white" />, <Phone />],
       active: callActive,
       onClick: () => setCallActive((prev) => !prev),
     },
     {
       id: "video",
-      label: videoActive ? "Turn off camera" : "Turn on camera",
+      label: videoActive ? "Turn on camera" : "Turn off camera",
       icons: [<VideoOff color="white" />, <Video />],
       active: videoActive,
       onClick: () => setVideoActive((prev) => !prev),
