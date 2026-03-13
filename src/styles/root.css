@@ -1,0 +1,12 @@
+:root {
+    --speed-base: 0.4s;
+    --speed-fast: calc(var(--speed-base) / 2);
+    --speed-slow: calc(var(--speed-base) * 2);
+
+    --white: #fff;
+    --black: #000;
+    --green: greenyellow;
+    --red: #e93939;
+    --pop: darkpink;
+    --dark: rgba(0, 0, 0, 0.4);
+}
