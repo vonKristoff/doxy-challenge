@@ -1,25 +1,23 @@
 import type { JSX } from "react";
 import type { CallControl } from "../callControlBar";
+import { videoConfig } from "./videoConfig";
 
 interface SettingsProps {
   controls: CallControl[];
 }
 
 export const Settings = ({ controls }: SettingsProps): JSX.Element => {
+  let options = controls.filter(({ id }) => id !== "menu");
+  options = [...options, ...videoConfig];
   return (
     <section data-settings aria-label="Settings">
       <ul role="list">
-        {controls.map(({ id, label, icons, active, onClick }) => (
+        {options.map(({ id, active }) => (
           <li key={id}>
-            <button
-              type="button"
-              aria-label={label}
-              aria-pressed={active}
-              onClick={onClick}
-            >
-              <span aria-hidden="true">{active ? icons[0] : icons[1]}</span>
-              <span>{label}</span>
-            </button>
+            <div className="status">
+              <span>{id}</span>
+              <span data-status={active}></span>
+            </div>
           </li>
         ))}
       </ul>

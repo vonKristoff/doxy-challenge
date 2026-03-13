@@ -1,5 +1,6 @@
 import type { JSX, ReactNode } from "react";
 import { useEffect, useRef } from "react";
+import { XCircle, SettingsIcon } from "lucide-react";
 
 interface DialogProps {
   open: boolean;
@@ -42,6 +43,13 @@ export const Dialog = ({
 
   return (
     <dialog ref={ref} aria-label="Menu">
+      <header>
+        <SettingsIcon />
+        <p>Current Call settings</p>
+        <button onClick={onClose}>
+          <XCircle color="white" />
+        </button>
+      </header>
       {children}
     </dialog>
   );

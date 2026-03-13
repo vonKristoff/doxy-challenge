@@ -1,11 +1,30 @@
-[data-settings] {
+[data-settings] .status {
+    font-size: small;
+    color: var(--white);
+    span {
+        text-transform: capitalize;
+    }
+    display: flex;
+    flex-direction: row;
+    padding: 0.125em 0;
+    justify-content: space-between;
+}
+[data-settings] [data-status] {
+    background-color: var(--green);
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+[data-settings] [data-status="false"] {
+    background-color: var(--red);
 }
 
-[data-settings] section {
+section[data-settings] {
+    font-family: monospace;
+    min-width: 300px;
+    margin: 0 2em;
 }
 
-[data-settings] label {
-}
-
-[data-settings] input {
+[data-settings] li:nth-child(odd) {
+    background-color: var(--alpha-dark);
 }

@@ -9,7 +9,7 @@ dialog {
     border: 0.0125em solid var(--alpha-dark);
     box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
     border-radius: 1rem;
-    padding: 2em 4em;
+    padding: 1em 2em;
     background: var(--alpha-dark);
     color: var(--white);
 
@@ -30,5 +30,30 @@ dialog[open] {
         opacity: 0;
         scale: 0.25;
         translate: 0 100%;
+    }
+}
+dialog header {
+    font-family: monospace;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+dialog button {
+    cursor: pointer;
+    background-color: var(--alpha-dark);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    width: 2em;
+    height: 2em;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    transition: rotate var(--speed-base) ease-in-out;
+    &:hover {
+        rotate: 180deg;
     }
 }

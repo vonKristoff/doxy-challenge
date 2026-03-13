@@ -56,7 +56,8 @@
 }
 
 [data-controls]:has(button:focus-within),
-[data-controls]:hover {
+[data-controls]:hover,
+[data-controls][data-mobile] {
     nav {
         backdrop-filter: blur(0.5em);
         background-color: rgba(0, 0, 0, 0.3);

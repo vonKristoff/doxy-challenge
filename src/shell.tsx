@@ -16,10 +16,10 @@ import { Settings } from "./settings";
 import "./styles/index.css";
 
 export const Shell = (): JSX.Element => {
+  const [callActive, setCallActive] = useState(true);
   const [videoActive, setVideoActive] = useState(false);
   const [micActive, setMicActive] = useState(false);
-  const [callActive, setCallActive] = useState(false);
-  const [menuActive, setMenuActive] = useState(true);
+  const [menuActive, setMenuActive] = useState(false);
 
   const controls: CallControl[] = [
     {
