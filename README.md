@@ -10,6 +10,6 @@ Project installed using `pnpm`.
 
 * I used `Claude Sonnet to 4.6` to assist with scaffolding throughout the project.
 * Using CSS only for transitions.
-* I wasn't 100% sure whether to follow the google doc styles, or whether they were just a guide.
+* I wasn't 100% sure whether to follow the google doc styles, or whether they were just a ballpark guide, especially when it comes to playing with animation.
 
 Thanks for reading! Hope all is clear.
