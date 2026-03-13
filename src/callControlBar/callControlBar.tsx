@@ -20,12 +20,13 @@ export const CallControlBar = ({
     <div data-controls>
       <nav aria-label="Call controls">
         <div data-controls-icon aria-hidden="true">
-          <Plus />
+          <Plus color="white" />
         </div>
         <ul role="list">
           {controls.map(({ id, label, icons, active, onClick }) => (
             <li key={id}>
               <button
+                data-action={id}
                 type="button"
                 data-bounce="padding"
                 aria-label={label}

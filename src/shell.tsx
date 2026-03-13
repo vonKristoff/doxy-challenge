@@ -14,29 +14,29 @@ import type { CallControl } from "./callControlBar";
 import "./styles/index.css";
 
 export const Shell = (): JSX.Element => {
-  const [videoActive, setVideoActive] = useState(true);
-  const [micActive, setMicActive] = useState(true);
-  const [callActive, setCallActive] = useState(true);
+  const [videoActive, setVideoActive] = useState(false);
+  const [micActive, setMicActive] = useState(false);
+  const [callActive, setCallActive] = useState(false);
 
   const controls: CallControl[] = [
     {
-      id: "hangup",
+      id: "call",
       label: "Leave call",
-      icons: [<PhoneOff />, <Phone />],
+      icons: [<PhoneOff color="white" />, <Phone />],
       active: callActive,
       onClick: () => setCallActive((prev) => !prev),
     },
     {
       id: "video",
       label: videoActive ? "Turn off camera" : "Turn on camera",
-      icons: [<VideoOff />, <Video />],
+      icons: [<VideoOff color="white" />, <Video />],
       active: videoActive,
       onClick: () => setVideoActive((prev) => !prev),
     },
     {
       id: "mic",
       label: micActive ? "Mute microphone" : "Unmute microphone",
-      icons: [<MicOff />, <Mic />],
+      icons: [<MicOff color="white" />, <Mic />],
       active: micActive,
       onClick: () => setMicActive((prev) => !prev),
     },
