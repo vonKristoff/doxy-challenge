@@ -116,3 +116,30 @@
         background-color: var(--alpha-dark);
     }
 }
+
+[data-icon-selector] {
+    display: grid;
+    overflow: hidden;
+}
+
+[data-icon-selector] span {
+    grid-area: 1 / 1;
+    transition: translate var(--speed-fast) ease;
+    display: flex;
+}
+
+[data-icon-selector][data-active="true"] span:first-child {
+    translate: 0 0;
+}
+
+[data-icon-selector][data-active="true"] span:last-child {
+    translate: 0 100%;
+}
+
+[data-icon-selector][data-active="false"] span:first-child {
+    translate: 0 -100%;
+}
+
+[data-icon-selector][data-active="false"] span:last-child {
+    translate: 0 0;
+}

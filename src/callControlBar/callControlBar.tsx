@@ -56,9 +56,10 @@ export const CallControlBar = ({
                 aria-pressed={active}
                 onClick={onClick}
               >
-                <span aria-hidden="true">
-                  {active ? icons?.[0] : icons?.[1]}
-                </span>
+                <div data-icon-selector data-active={active}>
+                  <span aria-hidden="true">{icons?.[0]}</span>
+                  <span aria-hidden="true">{icons?.[1]}</span>
+                </div>
               </button>
             </li>
           ))}
