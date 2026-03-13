@@ -19,7 +19,6 @@
     transform-origin: center;
     min-width: 4em;
     min-height: 4em;
-    /*border-radius var(--speed-base) var(--speed-slow) ease-out,*/
     transition:
         border-radius var(--speed-fast) 0 ease-out,
         top var(--speed-fast),
